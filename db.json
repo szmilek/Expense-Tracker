@@ -1,18 +1,99 @@
 {
   "expenses": [
     {
-      "id": 1 ,
-      "name": "Dress" ,
+      "id": 1,
+      "name": "Dress",
       "cost": "100",
       "category": "Clothes",
       "date": "21.04.2022"
     },
     {
-      "id": 2 ,
-      "name": "Bread" ,
+      "id": 2,
+      "name": "Bread",
       "cost": "10",
       "category": "Food",
       "date": "21.04.2022"
+    },
+    {
+      "id": 3,
+      "name": "Oranges",
+      "cost": "20",
+      "category": "Food",
+      "date": "21.04.2022"
+    },
+    {
+      "name": "Oranges",
+      "cost": "20",
+      "category": "Food",
+      "date": "21.04.2022",
+      "id": 4
+    },
+    {
+      "name": "T-shirt",
+      "cost": "50",
+      "category": "",
+      "date": "2022-04-21",
+      "": "clothes",
+      "id": 5
+    },
+    {
+      "name": "T-shirt",
+      "cost": "50",
+      "category": "",
+      "date": "2022-04-21",
+      "": "clothes",
+      "id": 6
+    },
+    {
+      "name": "T-shirt",
+      "cost": "50",
+      "category": "",
+      "date": "2022-04-21",
+      "": "clothes",
+      "id": 7
+    },
+    {
+      "name": "",
+      "cost": 0,
+      "category": "",
+      "date": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "cost": 0,
+      "category": "",
+      "date": "",
+      "id": 9
+    },
+    {
+      "name": "Pants",
+      "cost": "150",
+      "category": "",
+      "date": "2022-04-08",
+      "": "clothes",
+      "id": 10
+    },
+    {
+      "name": "",
+      "cost": 0,
+      "category": "",
+      "date": "",
+      "id": 11
+    },
+    {
+      "name": "Lemon",
+      "cost": "5",
+      "category": "",
+      "date": "2022-04-07",
+      "id": 12
+    },
+    {
+      "name": "Lemon",
+      "cost": "3",
+      "category": "",
+      "date": "2022-04-08",
+      "id": 13
     }
   ]
 }

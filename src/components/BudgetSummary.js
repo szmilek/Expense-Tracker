@@ -7,7 +7,6 @@ import Remaining from "./Remaining";
 const BudgetSummary = () => {
     return(
         <div className="container">
-            <h2>Budget Summary</h2>
             <div className="row mt-4">
                 <div className="col-sm">
                     <Budget/>
