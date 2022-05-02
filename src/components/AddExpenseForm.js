@@ -1,14 +1,12 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useState, useContext} from "react";
 import {Form, Col, Row, FormGroup, Button } from 'react-bootstrap';
-import Select from "react-select";
-import {AppContext} from "../context/AppContext";
-import {v4 as uuidv4} from "uuid";
+import AppContext from "../context/AppContext";
 
 
 
 const AddExpenseForm = () => {
 
-    const {dispatch} = useContext(AppContext);
+    const {setExpenses} = useContext(AppContext);
 
     const [form, setForm] = useState({
         name: "",
@@ -16,27 +14,6 @@ const AddExpenseForm = () => {
         category: "",
         date: ""
     });
-
-    const [data, setData] = useState([])
-
-    // const [name, setName] = useState("");
-    // const [cost, setCost] = useState("");
-    // const [category, setCategory] = useState("");
-    // const [date, setDate] = useState("");
-
-    // const options = [
-    //     {value: "food", label: "Food" },
-    //     {value: "clothes", label: "Clothes" },
-    //     {value: "home", label: "Home" },
-    //     {value: "travel", label: "Travel" }
-    // ]
-
-    useEffect(() => {
-        fetch("http://localhost:3005/expenses")
-            .then(r => r.json())
-            .then(data => setData(data))
-    }, [])
-
 
     const handleChange = ({ target: {name, value}}) => {
         setForm(prev=> ({
@@ -47,29 +24,17 @@ const AddExpenseForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // fetch("http://localhost:3005/expenses", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(form)
-        // }).then(r => r.json()).then(expense => setData(prev => ([
-        //     ...prev,
-        //     expense
-        // ])))
-
-        const expense = {
-            id: uuidv4(),
-            name: form.name,
-            cost: parseInt(form.cost),
-            category: form.category,
-            date: form.date
-        };
-
-        dispatch({
-            type: "ADD_EXPENSE",
-            payload: expense
-        })
+        fetch("http://localhost:3005/expenses", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(form)
+        }).then(r => r.json())
+          .then(expense => setExpenses(prev => ([
+            ...prev,
+            expense
+        ])))
     }
 
     return(
@@ -99,7 +64,7 @@ const AddExpenseForm = () => {
                             type="number"
                             required="required"
                             onChange={handleChange}
-                            value={form.cost}
+                            value={parseInt(form.cost)}
                             className="form-control"
                         />
                     </FormGroup>
@@ -109,20 +74,14 @@ const AddExpenseForm = () => {
                         <select
                             onChange={handleChange}
                             required="required"
+                            name="category"
                             className="form-control"
                             value={form.category}>
-                                <option value="food">Food</option>
-                                <option value="clothes">Clothes</option>
-                                <option value="home">Home</option>
-                                <option value="travel">Travel</option>
+                                <option value="Food">Food</option>
+                                <option value="Clothes">Clothes</option>
+                                <option value="Home">Home</option>
+                                <option value="Travel">Travel</option>
                         </select>
-                        {/*<Select*/}
-                        {/*    id="expenseCategory"*/}
-                        {/*    name={category}*/}
-                        {/*    placeholder="Category"*/}
-                        {/*    options={options}*/}
-                        {/*    onChange={e=> setCategory(e)}*/}
-                        {/*/>*/}
                     </FormGroup>
                 </Col>
                 <Col>
@@ -146,9 +105,6 @@ const AddExpenseForm = () => {
                 </Col>
             </Row>
         </Form>
-    {/*{data?.map(({id, name, cost, category, date}) => (*/}
-    {/*    <div key={id}>{name}{cost}{category}{date}</div>*/}
-    {/*))}*/}
     </>
     )
 }

@@ -1,28 +1,10 @@
 import React, {useContext} from "react";
 import ExpenseItem from "./ExpenseItem";
-import {AppContext} from "../context/AppContext";
+import AppContext from "../context/AppContext";
 
 const ExpensesList = () => {
 
-    // const expenses = [
-    //     {
-    //         id: 1,
-    //         name: "Dress",
-    //         cost: 100,
-    //         category: "Clothes",
-    //         date: "24.04.2022"
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "Bread",
-    //         cost: 10,
-    //         category: "Food",
-    //         date: "24.04.2022"
-    //     }
-    // ]
-
     const {expenses} = useContext(AppContext);
-
 
     return (
         <div className="container">

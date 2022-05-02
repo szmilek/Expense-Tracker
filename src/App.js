@@ -7,7 +7,7 @@ import {AppProvider} from "./context/AppContext";
 
 const App = () => {
 
-    const headingStyle = {
+  const headingStyle = {
         backgroundColor: "lightGray"
     }
 
@@ -19,6 +19,7 @@ const App = () => {
               <BudgetSummary/>
               <h2 className="mt-4 alert">Add Expense</h2>
               <AddExpense/>
+
               <h2 className="mt-4 alert">Expenses</h2>
               <ExpensesList/>
           </div>
