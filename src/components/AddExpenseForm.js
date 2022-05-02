@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import {Form, Col, Row, FormGroup, Button } from 'react-bootstrap';
 import AppContext from "../context/AppContext";
 
@@ -15,12 +15,21 @@ const AddExpenseForm = () => {
         date: ""
     });
 
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3005/expenses")
+            .then(r => r.json())
+            .then(data => setExpenses(data))
+    }, [])
+
     const handleChange = ({ target: {name, value}}) => {
         setForm(prev=> ({
             ...prev,
             [name]: value
         }))
     }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

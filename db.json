@@ -2,10 +2,24 @@
   "expenses": [
     {
       "name": "Apple",
-      "cost": "5",
-      "category": "food",
-      "date": "2022-05-27",
+      "cost": "3",
+      "category": "Food",
+      "date": "2022-05-18",
       "id": 4
+    },
+    {
+      "name": "Apple",
+      "cost": "3",
+      "category": "Food",
+      "date": "2022-05-18",
+      "id": 5
+    },
+    {
+      "name": "Apple",
+      "cost": "3",
+      "category": "Food",
+      "date": "2022-05-18",
+      "id": 6
     }
   ]
 }
