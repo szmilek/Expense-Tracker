@@ -2,24 +2,31 @@
   "expenses": [
     {
       "name": "Apple",
-      "cost": "3",
-      "category": "Food",
-      "date": "2022-05-18",
-      "id": 4
+      "cost": "4",
+      "category": "Home",
+      "date": "2022-05-05",
+      "id": 8
     },
     {
       "name": "Apple",
-      "cost": "3",
-      "category": "Food",
-      "date": "2022-05-18",
-      "id": 5
+      "cost": "4",
+      "category": "Home",
+      "date": "2022-05-05",
+      "id": 9
     },
     {
-      "name": "Apple",
-      "cost": "3",
+      "name": "T-shirt",
+      "cost": "20",
+      "category": "Clothes",
+      "date": "2022-05-19",
+      "id": 10
+    },
+    {
+      "name": "Orange",
+      "cost": "4",
       "category": "Food",
-      "date": "2022-05-18",
-      "id": 6
+      "date": "2022-05-20",
+      "id": 11
     }
   ]
 }

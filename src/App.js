@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BudgetSummary from "./components/BudgetSummary";
 import AddExpense from "./components/AddExpense";
 import ExpensesList from "./components/ExpensesList";
+import SearchBar from "./components/SearchBar";
 import {AppProvider} from "./context/AppContext";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
               <AddExpense/>
 
               <h2 className="mt-4 alert">Expenses</h2>
+              <SearchBar/>
               <ExpensesList/>
           </div>
       </AppProvider>
